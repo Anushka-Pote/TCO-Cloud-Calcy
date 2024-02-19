@@ -51,17 +51,18 @@ def recommend():
 
     # Placeholder for machine learning model
     kmeans = KMeans(n_clusters=3, random_state=42)
-    
+
     # Use the same column names as in the DataFrame
     columns_to_use = ['IOPS', 'vCPUs', 'RAM (GB)', 'Network Bandwidth (Gbps)', 'Backup Ratio', 'Dedupe Ratio']
-    
+
     df['Cluster'] = kmeans.fit_predict(df[columns_to_use])
     user_cluster = kmeans.predict(user_inputs_scaled)[0]
 
     # Get top 3 cloud providers for the user's cluster
     top_providers = df[df['Cluster'] == user_cluster].sort_values('Total Cost for 2 Years (USD)').head(3)['Cloud Provider'].tolist()
 
-    return render_template('result.html', top_providers=top_providers)
+    # Pass the df DataFrame to the template context
+    return render_template('result.html', top_providers=top_providers, df=df)
 
 if __name__ == '__main__':
     app.run(debug=True)
