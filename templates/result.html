@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <title>Cloud Calcy - Recommendation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffb700;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ffb700;
+            color: #ffffff;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h2 {
+            color: #5f5d5d;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffb700;
+        }
+        
+        button {
+            background-color: #ffb700;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffb700;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cloud Calcy</h1>
+        <h2>Recommendation Result</h2>
+    </header>
+
+    <nav>
+        <div class="link">
+            <a href="{{ url_for('index') }}">Awareness</a>
+            <a href="{{ url_for('index2') }}">Calculator</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </nav>
+    
+
+    <section>
+        <h2>Top 3 Recommended Cloud Providers:</h2>
+        <ul>
+            {% for provider in top_providers %}
+                <li>{{ provider }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <button onclick="window.location.href = 'index.html';">Home</button>
+
+</body>
+</html>

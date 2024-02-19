@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='awarness.css') }}"> 
+    <title>Cloud Calcy - Choose the Right Cloud for You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffb700;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #ecf0f1;
+            text-align: right;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ffb700;
+            color: #ffffff;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing:  border-box;
+            border-radius:	10px;
+
+        }
+
+        button {
+            background-color: #ffb700;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffb700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cloud Calcy</h1>
+        <h2>Choose the Right Cloud for You</h2>
+    </header>
+
+    <nav>
+        <div class="link">
+            <a href="{{ url_for('index') }}">Awareness</a>
+            <a href="{{ url_for('index2') }}">Calculator</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+        </nav>
+
+    <form action="{{ url_for('recommend') }}" method="post">
+        <!-- Add input fields for user parameters -->
+        <label for="iops">IOPS:</label>
+        <input type="number" name="iops" required>
+        <br>
+
+        <label for="vcpus">vCPUs:</label>
+        <input type="number" name="vcpus" required>
+        <br>
+
+        <label for="ram">RAM (GB):</label>
+        <input type="number" name="ram" required>
+        <br>
+
+        <label for="bandwidth">Network Bandwidth (Gbps):</label>
+        <input type="number" name="bandwidth" step="0.1" required>
+        <br>
+
+        <label for="backup_ratio">Backup Ratio:</label>
+        <input type="number" name="backup_ratio" step="0.1" required>
+        <br>
+
+        <label for="dedupe_ratio">Dedupe Ratio:</label>
+        <input type="number" name="dedupe_ratio" step="0.1" required>
+        <br>
+
+        <button type="submit">Recommend</button>
+        <button onclick="window.location.href = '{{ url_for('index') }}';">Home</button>
+    </form>
+</body>
+</html>
