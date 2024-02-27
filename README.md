@@ -15,8 +15,12 @@ Graphical Visualizations
 Scenario Planning
 
 **Usage**
+
 Clone the Repository:git clone https://github.com/your-username/tco-cloud-calc
+
 Install Dependencies: cd tco-cloud-calc
                       npm install
+
 Run the Application: npm start
+
 Access the Application: Open your web browser and go to http://localhost:3000
