@@ -5,9 +5,13 @@ Total Cost of Ownership (TCO) Calculator for Cloud Services**
 TCO Cloud Calcy is a comprehensive Total Cost of Ownership calculator designed to assist users in estimating the overall costs associated with cloud services. Whether you're planning a cloud migration or optimizing your existing infrastructure, TCO Cloud Calcy provides valuable insights into the financial aspects of your cloud computing decisions.
 
 **Features**
+
 Multi-Cloud Support
+
 Customizable Parameters
+
 Graphical Visualizations
+
 Scenario Planning
 
 **Usage**
