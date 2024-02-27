@@ -16,9 +16,9 @@ Scenario Planning
 
 **Usage**
 
-Clone the Repository:git clone https://github.com/your-username/tco-cloud-calc
+Clone the Repository:git clone https://github.com/Anushka-Pote/TCO-Cloud-Calcy
 
-Install Dependencies: cd tco-cloud-calc
+Install Dependencies: cd TCO-Cloud-Calcy
                       npm install
 
 Run the Application: npm start
